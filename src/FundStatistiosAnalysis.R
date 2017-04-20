@@ -119,7 +119,7 @@ fisher.test(mytable)
 assocstats(mytable)
 
 
-#函数table2float
+#函数table2float,表格式扁平化
 table2float <- function(mytable){
   df <- data.frame(mytable)
   rows <- dim(df)[1]
@@ -127,11 +127,12 @@ table2float <- function(mytable){
   x <- NULL
   for (i in 1:rows){
     for (j in 1:df$Freq[i]){
-      row <- 
+      row <- df[i, c(1:(cols - 1))]
+      x <- rbind(x, row)
     }
   }
-  
-  
+  row.names(x) <- c(1:dim(x)[1])
+  return (x)
 }
 
 
