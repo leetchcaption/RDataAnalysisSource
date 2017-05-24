@@ -135,6 +135,11 @@ table2float <- function(mytable){
   return (x)
 }
 
+# 方差和协方差
+states <- state.x77[,1:6]
+cov(states)
+# spearman等级相关系数
+cor(states,method = "spearman")
 
-
+cor.test(states[,3],states[,5])
 
