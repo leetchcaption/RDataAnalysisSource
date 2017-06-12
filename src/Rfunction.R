@@ -28,5 +28,7 @@ fristname <- sapply(name,'[',1)
 roster <- cbind(fristname,lastname,roster[,-1])
 # 先按照姓在按照名排序
 roster <- roster[order(lastname,fristname),]
+# 按照成绩排名
+roster <- roster[order(roster$grade),]
 
 
